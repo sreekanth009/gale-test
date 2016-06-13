@@ -1,0 +1,49 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Gale Test</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>File upload demo</h2>
+            <p>
+                <p><strong>Upload Files:</strong></p>
+                <input type="file" name="filesToUpload" id="input-file" multiple="" onChange="makeUploadList();" />
+            </p>
+            <ul id="file-list">
+            </ul>
+        </div>
+        
+        
+        <script src="js/vendor/jquery-1.12.0.min.js"></script>
+        <script type="text/javascript">
+
+            function makeUploadList () {
+
+              var input = document.getElementById("input-file");
+              var ul = document.getElementById("file-list");
+
+              for (var i = 0; i < input.files.length; i++) {
+                  var li = document.createElement("li");
+                  li.innerHTML = input.files[i].name;
+                  ul.appendChild(li);
+              }
+
+            }
+
+        </script>
+    </body>
+</html>
