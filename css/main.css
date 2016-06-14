@@ -109,7 +109,11 @@ blockquote span {
 }
 
 @media only screen and (min-width: 768px) {
-    
+
+    #carousel .flex-viewport {
+        margin-left: 25px;
+    }
+
     #content-area {
         padding: 80px 100px;
     }
