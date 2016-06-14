@@ -12,6 +12,11 @@ a {
     color: #FFF;
 }
 
+figcaption, figure {
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     max-width: 960px;
     margin: 0 auto;
@@ -40,7 +45,7 @@ a {
     position: relative;
 }
 
-.image-carousel li a {
+.image-carousel li figcaption {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -52,6 +57,7 @@ a {
     text-decoration: none;
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
 }
 
 .image-carousel {
@@ -76,6 +82,7 @@ a {
     z-index: 0;
     background-size: cover;
     padding: 40px 30px;
+    background-position: center bottom; 
 }
 
 blockquote span {

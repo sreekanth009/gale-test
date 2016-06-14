@@ -9,29 +9,30 @@ $(window).load(function(){
     itemMargin: 50,
   });
 
-  $(".image-carousel li span").hover(
+  $(".image-carousel li figure").hover(
     function(){
-      $(this).find('a').animate({
+      $(this).find('figcaption').animate({
          height:'100%'
       },'fast');
 
     },
     function() {
-      $(this).find('a').animate({
+      $(this).find('figcaption').animate({
          height: '38px'
       },'fast');
     });
 
   //Setting background image, class and blockquotes on load
-  var backgroundImage = $('.slides li:first-child a').prev('img').attr('src');
+
+  var backgroundImage = $('.slides li:first-child figure').find('img').attr('src');
   $('#content-area').css('background-image', 'url('+backgroundImage+')');
-  $('#content-area .blockquote').append('"'+$('.slides li:first-child a').attr('data-quote')+'"');
-  $('#content-area .blockquote-author').append('- '+ $('.slides li:first-child a').attr('data-author'));
+  $('#content-area .blockquote').append('"'+$('.slides li:first-child figcaption').attr('data-quote')+'"');
+  $('#content-area .blockquote-author').append('- '+ $('.slides li:first-child figcaption').attr('data-author'));
   $('.slides li:first-child').addClass('flex-active-slide');
 
   // Changing background images, class and blockquote on click
-  $('.slides li a ').click(function(event){
-    event.preventDefault;
+  
+  $('.slides li figcaption').click(function(event){
     $('#content-area').hide();
     $('#content-area .blockquote').empty();
     $('#content-area .blockquote-author').empty();
